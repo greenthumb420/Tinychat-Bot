@@ -12,6 +12,8 @@ Just make sure you have [Python 2.7](https://www.python.org/downloads/) installe
 open command prompt or Powershell and type `pip install bf4 pyamf requests colorama goslate`
 
 ##Linux
+Open the terminal and type
+
 `pip2 install bf4 pyamf requests colorama goslate`
 
 ##Mac
@@ -21,6 +23,7 @@ Open the terminal and type
 
 `pip install bf4 pyamf requests colorama goslate`
 
+##Help running Python and pip from inside command prompt or windows shell.
 ###To be able to run `pip` inside command prompt on Windows use the below info,<br/>
 Open start, locate control panel and open it, click `System and Security`,<br/>
 Then click `System`, on the Right click `Advanced system settings`,<br/>
