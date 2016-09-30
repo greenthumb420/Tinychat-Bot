@@ -10,7 +10,7 @@ This has fixes from the old bot and inprovements,<br/>
 Moderators cannot ban another Moderator (I wasn't aware of this until a user (`Jesus`) informed me.)<br/>
 Moderators now have better controls over the room for when the super user is not available,<br/>
 Some of which are `op`, `deop`, `guests`, `guestnicks`, `badnicks`,`badaccounts` without the need for a key<br/>
-This is of benifit for where the super user is not available.
+This is of benifit for when the super user is not available.
 
 ##Windows
 `C:\Python27\Scripts\pip2 install bf4 pyamf requests colorama goslate` or
