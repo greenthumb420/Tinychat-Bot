@@ -1,8 +1,7 @@
 This is a bot to use in your Tinychat room,<br/>
 It's an aid to help moderate a room from spam and bad users, It's also a tool for YouTube/Soundcloud,<br/>
 You're able to add multiple songs to a playlist, This also has other features ranging from weather to yomama jokes,<br/>
-This is using the pinylib library by @nortxort,<br/>
-You'll need all the dependencies for this to work,<br/>
+This is using the pinylib library by @nortxort, You'll need all the dependencies for this to work,<br/>
 You can install the modules directly in your python library or run them from the bot folder,<br/>
 Just make sure you have [Python 2.7](https://www.python.org/downloads/) installed.
 
