@@ -38,8 +38,7 @@ Open start, locate control panel and open it, click `System and Security`,<br/>
 Then click `System`, on the Right click `Advanced system settings`,<br/>
 Then click `Environment Variables`, In the System variables box scroll to Path and double click it,<br/>
 It will open a box, Click `Edit` or `New` depending on your version of Windows,<br/>
-Now type in (Windows 8 - 10) `C:\Python27\` and after the last value type in a `;` <br/>
-now type `C:\Python27\;C:\Python27\Scripts\;` for (Windows 7 or below) Click Ok<br/>
+Now type `C:\Python27\;C:\Python27\Scripts\;` Click Ok<br/>
 Now open Command Prompt or Shell and type in `python` and click Enter it should now open python in the window,<br/>
 Now you can run pip directly inside command prompt, `pip install bf4 pyamf requests colorama goslate`,<br/>
 If this still isn't working for you, Please contact me for help.
