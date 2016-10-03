@@ -5,13 +5,12 @@ This is using the pinylib library by @nortxort, You'll need all the dependencies
 You can install the modules directly in your python library or run them from the bot folder,<br/>
 Just make sure you have [Python 2.7](https://www.python.org/downloads/) installed.
 
-Please check the <a href="https://github.com/Tinychat/Tinychat-Bot/wiki">Wiki</a> for list of commands.
+Please check the [commands](https://github.com/Tinychat/Tinychat-Bot/wiki) for the full list.
 
 This has fixes from the old bot and inprovements,<br/>
 Moderators cannot ban another Moderator (I wasn't aware of this until a user (`Jesus`) informed me.)<br/>
 Moderators now have better controls over the room for when the super user is not available,<br/>
-Some of which are `op`, `deop`, `guests`, `guestnicks`, `badnicks`,`badaccounts` without the need for a key<br/>
-This is of benefit for when the super user is not available.
+Some of which are `op`, `deop`, `guests`, `guestnicks`, `badnicks`,`badaccounts` without the need for a key.
 
 ##Windows
 `C:\Python27\Scripts\pip2 install bf4 pyamf requests colorama goslate` or
@@ -41,4 +40,4 @@ It will open a box, Click `Edit` or `New` depending on your version of Windows,<
 Now type `C:\Python27\;C:\Python27\Scripts\;` Click Ok<br/>
 Now open Command Prompt or Shell and type in `python` and click Enter it should now open python in the window,<br/>
 Now you can run pip directly inside command prompt, `pip install bf4 pyamf requests colorama goslate`,<br/>
-If this still isn't working for you, Please contact me for help.
+If this still isn't working for you, Please [contact](https://www.ruddernation.com) me for help.
