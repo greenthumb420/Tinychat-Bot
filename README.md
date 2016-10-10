@@ -13,23 +13,25 @@ Moderators now have better controls over the room for when the super user is not
 Some of which are `op`, `deop`, `guests`, `guestnicks`, `badnicks`,`badaccounts` without the need for a key.
 
 ##Windows
-`C:\Python27\Scripts\pip2 install bf4 pyamf requests colorama goslate` or
+* `C:\Python27\Scripts\pip2 install bf4 pyamf requests colorama goslate` or
 
-`cd c:\Extracted folders directory\ python setup.py install` or
+* `cd c:\Extracted folders directory\ python setup.py install` 
 
-open command prompt or Powershell and type `pip install bf4 pyamf requests colorama goslate`
+or
+
+* open command prompt or Powershell and type `pip install bf4 pyamf requests colorama goslate`
 
 ##Linux
 Open the terminal and type
 
-`pip2 install bf4 pyamf requests colorama goslate`
+* `pip2 install bf4 pyamf requests colorama goslate`
 
 ##Mac
 Open the terminal and type
 
-`sudo easy_install pip` then
+* `sudo easy_install pip` then
 
-`pip install bf4 pyamf requests colorama goslate`
+* `pip install bf4 pyamf requests colorama goslate`
 
 ##Help running Python and pip from inside command prompt or windows shell.
 ###To be able to run `pip` inside command prompt on Windows use the below info,<br/>
