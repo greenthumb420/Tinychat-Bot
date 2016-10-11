@@ -158,19 +158,3 @@ def translate(query, en=True):
         return str(gs.translate(str(query), 'en'))
     else:
         pass
-
-
-def yo_mama_joke():
-    """
-    This is used to get your mama jokes,
-    The yomama website goes offline a lot so use this at caution.
-    :return:
-    """
-    url = 'http://api.yomomma.info/'
-    json_data = web.http_get(url, json=True)
-    extra = 'Sorry Yomama\'s Website is Offline!'
-    if json_data['json']:
-        joke = json_data['json']['joke'].decode('string_escape')
-        return joke
-    else:
-        return extra
