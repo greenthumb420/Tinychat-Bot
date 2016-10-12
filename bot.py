@@ -322,9 +322,6 @@ class TinychatBot(pinylib.TinychatRTMPClient):
                 elif cmd == CONFIG['prefix'] + '8ball':
                     threading.Thread(target=self.do_8ball, args=(cmd_arg,)).start()
 
-                elif cmd == CONFIG['prefix'] + 'yomama':
-                    threading.Thread(target=self.do_yo_mama_joke).start()
-
                 # Moderator controls for main chat, Also work via private message to the bot.
                 elif cmd == CONFIG['prefix'] + 'top':
                     threading.Thread(target=self.do_lastfm_chart, args=(cmd_arg,)).start()
@@ -1240,14 +1237,6 @@ class TinychatBot(pinylib.TinychatRTMPClient):
         chuck = other.chuck_norris()
         if chuck is not None:
             self.send_bot_msg(chuck, self.user.nick)
-
-    def do_yo_mama_joke(self):
-        """ Shows a random yomama joke when their website works!"""
-        yo_mama = str(other.yo_mama_joke())
-        if yo_mama is not None:
-            self.send_bot_msg(yo_mama, self.user.nick)
-        else:
-            self.send_bot_msg('Unable to retrieve from URL.', self.user.nick)
 
     def do_8ball(self, question):
         """
