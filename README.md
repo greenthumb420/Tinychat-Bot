@@ -15,11 +15,11 @@ Some of which are `op`, `deop`, `guests`, `guestnicks`, `badnicks`,`badaccounts`
 ***I've also provided my own Api keys for YouTube, Soundcloud and the World Weather Online,<br/>
 I would recommend that you register with each provider and use your own Api keys, The links are provided below.***
 
-* [https://developers.google.com](https://developers.google.com)
+* [Google Developers](https://developers.google.com)
 
-* [https://developers.soundcloud.com](https://developers.soundcloud.com)
+* [Soundcloud](https://developers.soundcloud.com)
 
-* [http://developer.worldweatheronline.com/api/](http://developer.worldweatheronline.com/api/)
+* [World Weather Online](http://developer.worldweatheronline.com/api/)
 
 ##Windows
 * `C:\Python27\Scripts\pip2 install bf4 pyamf requests colorama goslate` or
