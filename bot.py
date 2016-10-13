@@ -9,8 +9,8 @@ from utilities import string_utili, media_manager, privacy_settings
 
 CONFIG = {
     'prefix': '!',  # This is only needed for room commands, Private message to the bot uses no prefix.
-    'key': 'g8hrh24',
-    'super_key': 'chu7sd7s23',
+    'key': 'f7e38cn8',
+    'super_key': 'l4kjf9nf83jnsx',
     'bot_msg_to_console': False,
     'auto_message_enabled': True,
     'public_cmds': True,
@@ -23,7 +23,7 @@ CONFIG = {
 }
 
 log = logging.getLogger(__name__)
-__version__ = '1.0.1'
+__version__ = '1.0.2'
 
 
 class TinychatBot(pinylib.TinychatRTMPClient):
