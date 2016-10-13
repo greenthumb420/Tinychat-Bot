@@ -1157,11 +1157,12 @@ class TinychatBot(pinylib.TinychatRTMPClient):
             elif spy_info == 'PW':
                 self.send_bot_msg('*The room has a password on it!*')
             else:
-                self.send_bot_msg('*mods:* ' + spy_info['mod_count'] +
-                                  ' *Broadcasters:* ' + spy_info['broadcaster_count'] +
-                                  ' *Users:* ' + spy_info['total_count'])
+                self.send_bot_msg('*Room:* ' + '*' + roomname + '*')
+                self.send_bot_msg('*Moderators:* ' + spy_info['mod_count'])
+                self.send_bot_msg('*Broadcasters:* ' + spy_info['broadcaster_count'])
+                self.send_bot_msg('*Chatters:* ' + spy_info['total_count'])
                 users = ', '.join(spy_info['users'])
-                self.send_bot_msg('*' + users + '*')
+                self.send_bot_msg('*Users: ' + users + '*')
 
     def do_account_spy(self, account):
         """ Shows info for a tinychat account if it exists, Example: spyuser ruddernation. """
@@ -1172,9 +1173,10 @@ class TinychatBot(pinylib.TinychatRTMPClient):
             if tc_usr is None:
                 self.send_bot_msg('*Could not find tinychat info for:* ' + account)
             else:
-                self.send_bot_msg('*' + account + ':* ' +
-                                  ', *Website:* ' + tc_usr['website'] +
-                                  ', *Last login:* ' + tc_usr['last_active'], self.user.nick)
+                self.send_bot_msg('*Account:* ' + '*' + account + '*')
+                self.send_bot_msg('*Website:* ' + tc_usr['website'])
+                self.send_bot_msg('*Bio:* ' + tc_usr['biography'])
+                self.send_bot_msg('*Last login:* ' + tc_usr['last_active'])
 
     def do_search_urban_dictionary(self, search_str):
         """ Shows urbandictionary's definition of search string, Example: urban wanker. """
