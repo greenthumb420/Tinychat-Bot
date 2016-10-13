@@ -7,7 +7,7 @@ Just make sure you have [Python 2.7](https://www.python.org/downloads/) installe
 
 Please check the [commands](https://github.com/Tinychat/Tinychat-Bot/wiki) for the full list.
 
-This has fixes from the old bot and inprovements,<br/>
+This has fixes from the old bot and improvements,<br/>
 Moderators cannot ban another Moderator (I wasn't aware of this until a user (`Jesus`) informed me.)<br/>
 Moderators now have better controls over the room for when the super user is not available,<br/>
 Some of which are `op`, `deop`, `guests`, `guestnicks`, `badnicks`,`badaccounts` without the need for a key.
