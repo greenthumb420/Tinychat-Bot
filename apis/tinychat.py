@@ -107,8 +107,7 @@ def tinychat_user_info(tc_account):
             last_active = time.ctime(int(response['json']['last_active']))
             name = response['json']['name']
             location = response['json']['location']
-            # Below disabled, No need for it.
-            # biography = response['json']['biography']
+            biography = response['json']['biography']
             website = response['json']['website']
 
             return {
@@ -117,7 +116,7 @@ def tinychat_user_info(tc_account):
                 'last_active': last_active,
                 'name': name,
                 'location': location,
-                # 'biography': biography,
+                'biography': biography,
                 'website': website
             }
         except KeyError:
@@ -144,13 +143,16 @@ def spy_info(room):
             mod_count = str(response['json']['mod_count'])
             broadcaster_count = str(response['json']['broadcaster_count'])
             total_count = str(response['json']['total_count'])
+            # membername = str(response['json']['membername'])
             if total_count > 0:
                 users = response['json']['names']
                 return {
                     'mod_count': mod_count,
                     'broadcaster_count': broadcaster_count,
                     'total_count': total_count,
+                    # 'membername': membername,
                     'users': users
+
                 }
         except KeyError:
             return None
