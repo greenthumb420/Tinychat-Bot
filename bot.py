@@ -9,8 +9,8 @@ from utilities import string_utili, media_manager, privacy_settings
 
 CONFIG = {
     'prefix': '!',  # This is only needed for room commands, Private message to the bot uses no prefix.
-    'key': 'f7e38cn8',
-    'super_key': 'l4kjf9nf83jnsx',
+    'key': 'fhue822mn',
+    'super_key': 's78d7372d8gh2a',
     'bot_msg_to_console': False,
     'auto_message_enabled': True,
     'public_cmds': True,
@@ -23,7 +23,7 @@ CONFIG = {
 }
 
 log = logging.getLogger(__name__)
-__version__ = '1.0.2'
+__version__ = '1.0.3'
 
 
 class TinychatBot(pinylib.TinychatRTMPClient):
@@ -340,9 +340,6 @@ class TinychatBot(pinylib.TinychatRTMPClient):
 
                 elif cmd == CONFIG['prefix'] + 'resume':
                     self.do_play_media()
-
-                elif cmd == CONFIG['prefix'] + 'seek':
-                    self.do_seek_media(cmd_arg)
 
                 elif cmd == CONFIG['prefix'] + 'stop':
                     self.do_close_media()
@@ -721,27 +718,6 @@ class TinychatBot(pinylib.TinychatRTMPClient):
                 self.cancel_media_event_timer()
             self.media_manager.mb_close()
             self.send_media_broadcast_close(self.media_manager.track().type)
-
-    def do_seek_media(self, time_point):
-        """
-        Seek on a media playing.
-        :param time_point str the time point to skip to.
-        """
-        if self.user.is_mod or self.user.is_owner or self.user.is_super:
-            if self.media_timer_thread is not None and self.media_timer_thread.is_alive():
-                if ('h' in time_point) or ('m' in time_point) or ('s' in time_point):
-                    mls = string_utili.convert_to_millisecond(time_point)
-                    if mls is 0:
-                        self.console_write(pinylib.COLOR['bright_red'], 'invalid seek time.')
-                    else:
-                        track = self.media_manager.track()
-                        if track is not None:
-                            if 0 < mls < track.time:
-                                self.cancel_media_event_timer()
-                                new_media_time = self.media_manager.mb_skip(mls)
-                                if not self.media_manager.is_paused:
-                                    self.media_event_timer(new_media_time)
-                                self.send_media_broadcast_skip(track.type, mls)
 
     def do_clear_playlist(self):
         """ Clear the playlist. """
@@ -1403,9 +1379,6 @@ class TinychatBot(pinylib.TinychatRTMPClient):
 
             elif pm_cmd == 'resume':
                 self.do_play_media()
-
-            elif pm_cmd == 'seek':
-                self.do_seek_media(pm_cmd)
 
             elif pm_cmd == 'stop':
                 self.do_close_media()
