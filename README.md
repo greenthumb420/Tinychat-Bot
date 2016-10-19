@@ -22,25 +22,25 @@ I would recommend that you register with each provider and use your own Api keys
 * [World Weather Online](http://developer.worldweatheronline.com/api/)
 
 ##Windows
-* `C:\Python27\Scripts\pip2 install bf4 pyamf requests colorama goslate` or
+* `C:\Python27\Scripts\pip2 install bs4 pyamf requests colorama goslate` or
 
 * `cd c:\Extracted folders directory\ python setup.py install` 
 
 or
 
-* open command prompt or Powershell and type `pip install bf4 pyamf requests colorama goslate`
+* open command prompt or Powershell and type `pip install bs4 pyamf requests colorama goslate`
 
 ##Linux
 Open the terminal and type
 
-* `pip2 install bf4 pyamf requests colorama goslate`
+* `pip2 install bs4 pyamf requests colorama goslate`
 
 ##Mac
 Open the terminal and type
 
 * `sudo easy_install pip` then
 
-* `pip install bf4 pyamf requests colorama goslate`
+* `pip install bs4 pyamf requests colorama goslate`
 
 ##Help running Python and pip from inside command prompt or windows shell.
 ###To be able to run `pip` inside command prompt on Windows use the below info,<br/>
