@@ -22,25 +22,25 @@ I would recommend that you register with each provider and use your own Api keys
 * [World Weather Online](http://developer.worldweatheronline.com/api/)
 
 ##Windows
-* `C:\Python27\Scripts\pip2 install bs4 pyamf requests colorama goslate` or
+* `C:\Python27\Scripts\pip2 install bs4 requests colorama goslate` or
 
 * `cd c:\Extracted folders directory\ python setup.py install` 
 
 or
 
-* open command prompt or Powershell and type `pip install bs4 pyamf requests colorama goslate`
+* open command prompt or Powershell and type `pip install bs4 requests colorama goslate`
 
 ##Linux
 Open the terminal and type
 
-* `pip2 install bs4 pyamf requests colorama goslate`
+* `pip2 install bs4 requests colorama goslate`
 
 ##Mac
 Open the terminal and type
 
 * `sudo easy_install pip` then
 
-* `pip install bs4 pyamf requests colorama goslate`
+* `pip install bs4 requests colorama goslate`
 
 ##Help running Python and pip from inside command prompt or windows shell.
 ###To be able to run `pip` inside command prompt on Windows use the below info,<br/>
@@ -50,5 +50,5 @@ Then click `Environment Variables`, In the System variables box scroll to Path a
 It will open a box, Click `Edit` or `New` depending on your version of Windows,<br/>
 Now type `C:\Python27\;C:\Python27\Scripts\;` Click Ok<br/>
 Now open Command Prompt or Shell and type in `python` and click Enter it should now open python in the window,<br/>
-Now you can run pip directly inside command prompt, `pip install bf4 pyamf requests colorama goslate`,<br/>
+Now you can run pip directly inside command prompt, `pip install bs4 requests colorama goslate`,<br/>
 If this still isn't working for you, Please [contact](https://www.ruddernation.com) me for help.
