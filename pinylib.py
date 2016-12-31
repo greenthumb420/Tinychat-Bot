@@ -14,7 +14,7 @@ __version__ = '5.0.0'
 
 #  Basic settings.
 SETTINGS = {
-    'swf_version': '0674',                      # tinychat swf version.
+    'swf_version': '0675',                      # tinychat swf version.
     'chat_logging': True,                       # log chat messages/events.
     'debug_mode': False,                        # True shows additional info/errors.
     'debug_to_file': False,                     # log debug info to file.
