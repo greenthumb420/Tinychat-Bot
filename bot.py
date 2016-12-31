@@ -9,9 +9,9 @@ from utilities import string_utili, media_manager, privacy_settings
 
 CONFIG = {
     'prefix': '!',  # This is only needed for room commands, Private message to the bot uses no prefix.
-    'key': 'g7gh8hg78',
-    'super_key': 'fj092fjgjg75jkoa',
-    'bot_msg_to_console': False,
+    'key': '23jnc8w',
+    'super_key': 'f689fdf78flsa9',
+    'bot_msg_to_console': True,
     'auto_message_enabled': True,
     'public_cmds': True,
     'debug_to_file': False,
@@ -23,7 +23,7 @@ CONFIG = {
 }
 
 log = logging.getLogger(__name__)
-__version__ = '1.0.5'
+__version__ = '1.0.6'
 
 
 class TinychatBot(pinylib.TinychatRTMPClient):
@@ -120,18 +120,18 @@ class TinychatBot(pinylib.TinychatRTMPClient):
                             self.send_ban_msg(new, uid)
                             self.send_bot_msg('*Auto-Banned:* (bad nick)')
 
-                    else:
-                        user = self.find_user_info(new)
-                        if user is not None:
-                            if user.account:
-                                self.send_bot_msg('*Greetings & Welcome to ' + self._roomname + '* - ' + new + ' ('
-                                                  + user.account + ')')
-                            else:
-                                self.send_bot_msg('*Greetings & Welcome to ' + self._roomname + '* - ' + new)
+                    # else:
+                       # user = self.find_user_info(new)
+                       # if user is not None:
+                           # if user.account:
+                               # self.send_bot_msg('*Greetings & Welcome to ' + self._roomname + '* - ' + new + ' ('
+                                                 # + user.account + ')')
+                           # else:
+                               # self.send_bot_msg('*Greetings & Welcome to ' + self._roomname + '* - ' + new)
 
-                        if self.media_timer_thread is not None and self.media_timer_thread.is_alive():
-                            if not self.media_manager.is_mod_playing:
-                                self.send_media_broadcast_start(self.media_manager.track().type,
+                    if self.media_timer_thread is not None and self.media_timer_thread.is_alive():
+                        if not self.media_manager.is_mod_playing:
+                            self.send_media_broadcast_start(self.media_manager.track().type,
                                                                 self.media_manager.track().id,
                                                                 time_point=self.media_manager.elapsed_track_time(),
                                                                 private_nick=new)
@@ -267,7 +267,7 @@ class TinychatBot(pinylib.TinychatRTMPClient):
                 elif cmd == CONFIG['prefix'] + 'who?':
                     self.do_who_plays()
 
-                elif cmd == CONFIG['prefix'] + 'help':
+                elif cmd == CONFIG['prefix'] + 'commands':
                     self.do_help()
 
                 elif cmd == CONFIG['prefix'] + 'uptime':
@@ -611,7 +611,7 @@ class TinychatBot(pinylib.TinychatRTMPClient):
     def do_clear(self):
         """ Clears the chat box. """
         if self.user.is_mod or self.user.is_owner or self.user.is_super:
-            for x in range(0, 8):
+            for x in range(0, 9):
                 self.send_owner_run_msg(' ')
             else:
                 clear = '133,133,133,133,133,133,133,133,133,133,133,133,133'
@@ -1035,7 +1035,7 @@ class TinychatBot(pinylib.TinychatRTMPClient):
 
     def do_pmme(self):
         """ Opens a PM session with the bot. """
-        self.send_private_msg('How can I help you *' + self.user.nick + '*?', self.user.nick)
+        self.send_private_msg('Hello *' + self.user.nick + ' How can I help you today*?', self.user.nick)
 
     #  == Media Related Command Methods. ==
     def do_playlist_status(self):
@@ -1293,10 +1293,10 @@ class TinychatBot(pinylib.TinychatRTMPClient):
             elif pm_cmd == 'ban':
                 self.do_ban(pm_arg)
 
-            elif pm_cmd == 'clearbn':
+            elif pm_cmd == 'clearnick':
                 self.do_clear_bad_nicks()
 
-            elif pm_cmd == 'clearba':
+            elif pm_cmd == 'clearaccount':
                 self.do_clear_bad_accounts()
 
             elif pm_cmd == 'guests':
@@ -1325,6 +1325,7 @@ class TinychatBot(pinylib.TinychatRTMPClient):
 
             elif pm_cmd == 'clear':
                 self.do_clear()
+
             # Misc settings.
             elif pm_cmd == 'topic':
                 self.do_topic(pm_arg)
@@ -1356,6 +1357,12 @@ class TinychatBot(pinylib.TinychatRTMPClient):
 
             # Media Commands.
             # Bot Controller Commands
+            elif pm_cmd == 'play':
+                threading.Thread(target=self.do_play_youtube, args=(pm_cmd,)).start()
+
+            elif pm_cmd == 'playsc':
+                threading.Thread(target=self.do_play_soundcloud, args=(pm_arg,)).start()
+
             elif pm_cmd == 'top':
                 threading.Thread(target=self.do_lastfm_chart, args=(pm_cmd,)).start()
 
@@ -1736,6 +1743,7 @@ class TinychatBot(pinylib.TinychatRTMPClient):
         self.media_timer_thread = threading.Timer(video_time_in_seconds, self.media_event_handler)
         self.media_timer_thread.start()
 
+    @property
     def random_msg(self):
         """
         Pick a random message from a list of messages.
@@ -1755,7 +1763,7 @@ class TinychatBot(pinylib.TinychatRTMPClient):
                     'Would a fly without wings be called a walk?',
                     'Unicorns are real. They\'re just fat and gray and we call them rhinos.',
                     upnext, plstat, '*I\'ve been online for*: ' + self.format_time(self.get_runtime()),
-                    'For fullscreen use http://www.ruddernation.net/' + self._roomname]
+                    'For fullscreen use http://www.ruddernation.info/' + self._roomname]
 
         return random.choice(messages)
 
@@ -1763,7 +1771,7 @@ class TinychatBot(pinylib.TinychatRTMPClient):
         """ The event handler for auto_msg_timer. """
         if self.is_connected:
             if CONFIG['auto_message_enabled']:
-                self.send_bot_msg(self.random_msg(), use_chat_msg=True)
+                self.send_bot_msg(self.random_msg, use_chat_msg=True)
                 self.connection.send_ping_request()
         self.start_auto_msg_timer()
 
